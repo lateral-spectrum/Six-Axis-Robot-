@@ -15,6 +15,16 @@ public class RobotPose
     public float FifthAxisJointAngle;
     public float SixthAxisJointAngle;
 
+    public RobotPose()
+    {
+        this.BaseJointAngle = 0f;
+        this.ShoulderJointAngle = 0f;
+        this.ElbowJointAngle = 0f;
+        this.FourthAxisJointAngle = 0f;
+        this.FifthAxisJointAngle = 0f;
+        this.SixthAxisJointAngle = 0f;
+    }
+
     public RobotPose(float base_joint_angle, float shoulder_joint_angle, float elbow_joint_angle, float fourth_axis_joint_angle, float fifth_axis_joint_angle, float sixth_axis_joint_angle)
     {
         this.BaseJointAngle = base_joint_angle;
@@ -31,9 +41,10 @@ public class RobotStateManager : MonoBehaviour {
     
     public JointMovementOperation ActiveOperation;
     public string StartPoseName; 
-
     
-    public RobotPose[] PosePresets; 
+    public RobotPose[] PosePresets;
+
+    RobotPose start_pos; 
 
     void Start()
     {
@@ -42,7 +53,23 @@ public class RobotStateManager : MonoBehaviour {
 
     void RunRobotStartup()
     {
+        RobotPose start_pose = new RobotPose(0f, 0f, 0f, 0f, 0f, 0f); 
 
+        JointMovementOperation move_to_start_pose = new JointMovementOperation(start_pos);
+        ActiveOperation = move_to_start_pose;
+
+
+        StartCoroutine("RunOperation"); 
+    }
+
+    public IEnumerator RunOperation()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            print("Running a step in the manueuver."); 
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 }
