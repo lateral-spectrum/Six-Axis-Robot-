@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RobotKeyBoardInputController : MonoBehaviour {
-    
+public class MoveToClickedPoint : MonoBehaviour {
 
-     
+	
 }

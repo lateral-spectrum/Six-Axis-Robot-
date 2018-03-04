@@ -3,15 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RobotRawController : MonoBehaviour
-{
-    //public float BaseJointMotorTargetAngle;
-    //public float ShoulderJointMotorTargetAngle;
-    //public float ElbowJointMotorTargetAngle;
-    //public float FourthAxisJointzMotorTargetAngle;
-    //public float FifthAxisJointMotorTargetAngle;    
-    //public float SixthAxisJointMotorTargetAngle; // motor target angles are abstrated elsewhere
-
-
+{   
     public HingeJoint BaseJoint;
     public HingeJoint ShoulderJoint;
     public HingeJoint ElbowJoint;
@@ -73,7 +65,20 @@ public class RobotRawController : MonoBehaviour
     public bool ElbowJointUseLimits;
     public bool FourthAxisJointUseLimits;
     public bool FifthAxisJointUseLimits;
-    public bool SixthAxisJointUseLimits; 
+    public bool SixthAxisJointUseLimits;
+
+    public float BaseJointLimitsMinimum; 
+    public float BaseJointLimitsMaximum;
+    public float ShoulderJointLimitsMinimum; 
+    public float ShoulderJointLimitsMaximum;
+    public float ElbowJointLimitsMinimum; 
+    public float ElbowJointLimitsMaximum;
+    public float FourthAxisLimitsMinimum; 
+    public float FourthAxisLimitsMaximum;
+    public float FifthAxisLimtsMinimum;
+    public float FifthAxisLimtsMaximum;
+    public float SixthAxisLimitsMinimum;
+    public float SixthAxisLimitsMaximum;
 
     public float BaseJointLimitsBounciness;
     public float ShoulderJointLimitsBounciness;
@@ -121,10 +126,12 @@ public class RobotRawController : MonoBehaviour
         BaseJoint.motor = motor;
         BaseJoint.useLimits = BaseJointUseLimits; 
         limits = BaseJoint.limits;
+        limits.min = BaseJointLimitsMinimum;
+        limits.max = BaseJointLimitsMaximum;
         limits.bounciness = BaseJointLimitsBounciness;
         limits.bounceMinVelocity = BaseJointLimitsBounceMinVelocity; 
         limits.contactDistance = BaseJointLimitsContactDistance; 
-        BaseJoint.limits = limits;
+        BaseJoint.limits = limits;        
         BaseJoint.useSpring = BaseJointUseSpring;
         spring = BaseJoint.spring;
         spring.targetPosition = BaseJointSpringTargetPosition;
@@ -137,12 +144,14 @@ public class RobotRawController : MonoBehaviour
         motor.force = ShoulderJointMotorForce;
         motor.targetVelocity = ShoulderJointMotorTargetVelocity;
         ShoulderJoint.motor = motor;
+        ShoulderJoint.limits = limits;
         ShoulderJoint.useLimits = ShoulderJointUseLimits;
         limits = ShoulderJoint.limits;
+        limits.min = ShoulderJointLimitsMinimum;
+        limits.max = ShoulderJointLimitsMaximum;
         limits.bounciness = ShoulderJointLimitsBounciness;
         limits.bounceMinVelocity = ShoulderJointLimitsBounceMinVelocity;
-        limits.contactDistance = ShoulderJointLimitsContactDistance;
-        ShoulderJoint.limits = limits;
+        limits.contactDistance = ShoulderJointLimitsContactDistance;        
         ShoulderJoint.useSpring = ShoulderJointUseSpring;
         spring = ShoulderJoint.spring;
         spring.targetPosition = ShoulderJointSpringTargetPosition;
@@ -157,6 +166,8 @@ public class RobotRawController : MonoBehaviour
         ElbowJoint.motor = motor;
         ElbowJoint.useLimits = ElbowJointUseLimits;
         limits = ElbowJoint.limits;
+        limits.min = ElbowJointLimitsMinimum;
+        limits.max = ElbowJointLimitsMaximum;
         limits.bounciness = ElbowJointLimitsBounciness;
         limits.bounceMinVelocity = ElbowJointLimitsBounceMinVelocity;
         limits.contactDistance = ElbowJointLimitsContactDistance;
@@ -175,6 +186,8 @@ public class RobotRawController : MonoBehaviour
         FourthAxisJoint.motor = motor;
         FourthAxisJoint.useLimits = FourthAxisJointUseLimits;
         limits = FourthAxisJoint.limits;
+        limits.min = FourthAxisLimitsMinimum;
+        limits.max = FourthAxisLimitsMaximum;
         limits.bounciness = FourthAxisJointLimitsBounciness;
         limits.bounceMinVelocity = FourthAxisJointLimitsBounceMinVelocity;
         limits.contactDistance = FourthAxisJointLimitsContactDistance;
@@ -194,6 +207,8 @@ public class RobotRawController : MonoBehaviour
         FifthAxisJoint.motor = motor;
         FifthAxisJoint.useLimits = FifthAxisJointUseLimits;
         limits = FifthAxisJoint.limits;
+        limits.min = FifthAxisLimtsMinimum;
+        limits.max = FifthAxisLimtsMaximum;
         limits.bounciness = FifthAxisJointLimitsBounciness;
         limits.bounceMinVelocity = FifthAxisJointLimitsBounceMinVelocity;
         limits.contactDistance = FifthAxisJointLimitsContactDistance;
@@ -213,6 +228,8 @@ public class RobotRawController : MonoBehaviour
         SixthAxisJoint.motor = motor;
         SixthAxisJoint.useLimits = SixthAxisJointUseLimits;
         limits = SixthAxisJoint.limits;
+        limits.min = SixthAxisLimitsMinimum;
+        limits.max = SixthAxisLimitsMaximum; 
         limits.bounciness = SixthAxisJointLimitsBounciness;
         limits.bounceMinVelocity = SixthAxisJointLimitsBounceMinVelocity;
         limits.contactDistance = SixthAxisJointLimitsContactDistance;

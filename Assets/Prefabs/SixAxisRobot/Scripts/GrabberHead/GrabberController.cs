@@ -9,7 +9,9 @@ public class GrabberController : MonoBehaviour {
     public float GrabberClosedAngle;
 
     public HingeJoint[] ClawJointsRight;
-    public HingeJoint[] ClawJointsLeft;        
+    public HingeJoint[] ClawJointsLeft;     
+    
+    public 
 
     void FixedUpdate()
     {
@@ -19,11 +21,12 @@ public class GrabberController : MonoBehaviour {
             OpenGrabber(); 
         }
         else
-        {
-            // close grabber
+        {            
             CloseGrabber(); 
         }
     }
+
+    
 
     public void OpenGrabber()
     {
