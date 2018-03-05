@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// use this class to modify the position of the robot. 
+
 public class AxisControl : MonoBehaviour {
 
     public HingeJoint BaseJoint;

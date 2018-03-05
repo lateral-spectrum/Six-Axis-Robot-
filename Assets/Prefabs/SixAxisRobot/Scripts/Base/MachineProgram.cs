@@ -15,7 +15,7 @@ public class MachineProgram {
     {
         for (int i = 0; i < program_steps.Length; i++)
         {
-            program_steps[i].RunOperation(); 
+            //program_steps[i].RunOperation(); 
         }
     }
 }

@@ -40,8 +40,8 @@ public class RobotPose
 public class RobotStateManager : MonoBehaviour {
     
     public JointMovementOperation ActiveOperation;
-    public string StartPoseName; 
-    
+    public string StartPoseName;
+    public RobotPose ActiveRobotPose;
     public RobotPose[] PosePresets;
 
     RobotPose start_pos; 
@@ -59,17 +59,10 @@ public class RobotStateManager : MonoBehaviour {
         ActiveOperation = move_to_start_pose;
 
 
-        StartCoroutine("RunOperation"); 
+
+
+        
     }
 
-    public IEnumerator RunOperation()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            print("Running a step in the manueuver."); 
-
-            yield return new WaitForSeconds(1f);
-        }
-    }
 
 }
