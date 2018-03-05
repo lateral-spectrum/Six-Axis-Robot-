@@ -75,8 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4493664217692334}
   - component: {fileID: 114477807932737816}
-  - component: {fileID: 114180238212146316}
-  - component: {fileID: 114904563617542778}
+  - component: {fileID: 114230565482167038}
   - component: {fileID: 114290870655586974}
   m_Layer: 0
   m_Name: SixAxisArmRobot
@@ -1282,7 +1281,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.033111323, y: 0.000000014266911, z: -0.000000030647527}
+  m_ConnectedAnchor: {x: -0.033111285, y: 0.000000014266911, z: -0.000000030647527}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1316,7 +1315,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.014100007, y: -0.0049999994, z: -0.0013999454}
+  m_ConnectedAnchor: {x: 0.014100007, y: -0.0049999994, z: -0.0014000543}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -1452,7 +1451,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.021903504, y: -0.000000006575079, z: 0}
+  m_ConnectedAnchor: {x: -0.0219035, y: -0.000000006575079, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1486,7 +1485,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.0000000015351043, z: 0.05003429}
+  m_ConnectedAnchor: {x: 0, y: -0.0000000015351043, z: 0.050034195}
   m_UseSpring: 1
   m_Spring:
     spring: 500
@@ -1520,7 +1519,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.014799993, y: 0.005, z: -0.001399942}
+  m_ConnectedAnchor: {x: -0.014799993, y: 0.005, z: -0.0014000509}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -1554,7 +1553,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.014799993, y: -0.0049999994, z: -0.0013999454}
+  m_ConnectedAnchor: {x: -0.014799993, y: -0.0049999994, z: -0.0014000543}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -1588,7 +1587,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.015200008, y: 0.005, z: -0.001399942}
+  m_ConnectedAnchor: {x: 0.015200008, y: 0.005, z: -0.0014000509}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -1612,7 +1611,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &114180238212146316
+--- !u!114 &114230565482167038
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1620,15 +1619,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315045951915446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 384fde47bc39cc745b725f98a84ebc54, type: 3}
+  m_Script: {fileID: 11500000, guid: 84a48a8a6da09a042bc2d401a4897f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseJoint: {fileID: 0}
-  ShoulderJoint: {fileID: 0}
-  ElbowJoint: {fileID: 0}
-  FourthAxisJoint: {fileID: 0}
-  FifthAxisJoint: {fileID: 0}
-  SixthAxisJoint: {fileID: 0}
+  MaintainPosition: 0
 --- !u!114 &114290870655586974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1741,35 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec01a8c06f61144abd995c0a212ac89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveOperation: {fileID: 0}
-  StartPoseName: 
-  ActiveRobotPose:
-    PoseName: 
-    BaseJointAngle: 0
-    ShoulderJointAngle: 0
-    ElbowJointAngle: 0
-    FourthAxisJointAngle: 0
-    FifthAxisJointAngle: 0
-    SixthAxisJointAngle: 0
-  PosePresets:
-  - PoseName: Start1
-    BaseJointAngle: 0
-    ShoulderJointAngle: 45
-    ElbowJointAngle: -130
-    FourthAxisJointAngle: 0
-    FifthAxisJointAngle: 0
-    SixthAxisJointAngle: 0
---- !u!114 &114904563617542778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1315045951915446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2060a75f182744895a75e324d2bee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  TargetAngleValues: []
 --- !u!114 &114935000754948846
 MonoBehaviour:
   m_ObjectHideFlags: 1
